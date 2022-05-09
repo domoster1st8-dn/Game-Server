@@ -16,8 +16,8 @@ namespace GameServer
         {
             id = _clientId;
             tcp = new TCP(id);
-        }    
-        
+        }
+
         public class TCP
         {
             public TcpClient socket;
@@ -50,7 +50,7 @@ namespace GameServer
                 try
                 {
                     int _byteLenght = stream.EndRead(_result);
-                    if(_byteLenght <= 0)
+                    if (_byteLenght <= 0)
                     {
                         //TODO: Disconnect
                         return;

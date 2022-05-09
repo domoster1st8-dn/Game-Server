@@ -20,7 +20,7 @@ namespace GameServer
         {
             MaxPlayers = maxplayers;
             Port = port;
-            
+
             Console.WriteLine("Starting server ...");
             InitializeServerData();
 
@@ -29,7 +29,7 @@ namespace GameServer
             tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectCallback), null);
 
             Console.WriteLine($"Server started on {Port}.");
-        } 
+        }
         private static void TCPConnectCallback(IAsyncResult asyncResult)
         {
             TcpClient tcpClient = tcpListener.EndAcceptTcpClient(asyncResult);
@@ -39,7 +39,7 @@ namespace GameServer
 
             for (int i = 1; i <= MaxPlayers; i++)
             {
-                if(clients[i].tcp.socket == null)
+                if (clients[i].tcp.socket == null)
                 {
                     clients[i].tcp.Connect(tcpClient);
                     return;
