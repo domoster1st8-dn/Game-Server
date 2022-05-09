@@ -66,7 +66,7 @@ namespace GameServer
                 {
                     Console.WriteLine($"Error receiving TCP data: {_ex}");
                     //TODO: disconnect
-                }
+                } 
             }
         }
     }
